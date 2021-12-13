@@ -1,15 +1,30 @@
 <app-progress-bar [progress]="progress"></app-progress-bar>
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Loan Summary</h1>
-    <p class="lead">Hello, {{ userName }}</p>
-    <hr class="my-4">
-    <p>This is your loan summary:</p>
-    <span *ngIf="loanAmount"><strong>Loan amount</strong>: {{ loanAmount }}</span><br>
-    <span *ngIf="loanTerm"><strong>Loan term</strong>: {{ loanTerm }} months</span><br>
-    <span *ngIf="salary"><strong>Your salary</strong>: {{ salary }} &#8364;</span><br>
-    <span *ngIf="workedTime"><strong>Worked time in current job</strong>: {{ workedTime }} months</span><br><br>
-    <p><a class="btn btn-primary btn-sm" routerLink="/home">Start again</a></p>
+<div class="card">
+  <div class="card-header">
+    <h5>Loan Summary</h5>
+  </div>
+  <div class="card-body">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <p class="lead">Hello, {{ userName }}</p>
+        <hr class="my-4" />
+        <p>This is your loan summary:</p>
+        <span *ngIf="loanAmount"
+          ><strong>Loan amount</strong>: {{ loanAmount }}</span
+        ><br />
+        <span *ngIf="loanTerm"
+          ><strong>Loan term</strong>: {{ loanTerm }} months</span
+        ><br />
+        <span *ngIf="salary"
+          ><strong>Your salary</strong>: {{ salary }} &#8364;</span
+        ><br />
+        <span *ngIf="workedTime"
+          ><strong>Worked time in current job</strong>:
+          {{ workedTime }} months</span
+        ><br /><br />
+        <p><a class="btn btn-primary btn-sm" routerLink="/home">Start again</a></p>
+      </div>
+    </div>
   </div>
 </div>

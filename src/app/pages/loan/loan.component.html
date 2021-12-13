@@ -1,34 +1,63 @@
 <app-progress-bar [progress]="progress"></app-progress-bar>
 
-<div class="row">
-  <div class="col-12">
-<form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
-  <div class="col-auto">
-    <label for="loanAmount" class="sr-only" >Amount of loan</label>
-    <input type="number" class="form-control" formControlName="loanAmount" [ngClass]="{ 'is-invalid': submitted && fields.loanAmount.errors}" (focusout)='checkLoanAmount($event)'/>
-
-    <small id="loanAmount" class="form-text text-muted">Minimum: 1000, maximum: 20000</small>
-  <div *ngIf="submitted && fields.loanAmount.errors" class="invalid-feedback">
-      <div *ngIf="fields.loanAmount.errors">Incorrect amount</div>
+<div class="card">
+  <div class="card-header">
+    <h5>Loan Amount</h5>
   </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+          <div class="col-auto">
+            <label for="loanAmount" class="sr-only">Amount in &#8364;</label>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="loanAmount"
+              [ngClass]="{
+                'is-invalid': submitted && fields.loanAmount.errors
+              }"
+              (focusout)="checkLoanAmount($event)"
+            />
 
-  </div>
-  <br>
-   <div class="col-auto" *ngIf="_tmpTerm.length">
-    <label for="loanTerm">Loan term</label>
-    <select class="form-control" formControlName="loanTerm" [ngClass]="{ 'is-invalid': submitted && fields.loanTerm.errors}">
-      <option *ngFor="let item of _tmpTerm" value="{{ item.term }}">{{ item.name }}</option>
-    </select>
-    <div *ngIf="submitted && fields.loanTerm.errors" class="invalid-feedback">
-      <div *ngIf="fields.loanTerm.errors">Minimum 6 months</div>
+            <small id="loanAmount" class="form-text text-muted"
+              >Minimum: 1000, maximum: 20000</small
+            >
+            <div
+              *ngIf="submitted && fields.loanAmount.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="fields.loanAmount.errors">Incorrect amount</div>
+            </div>
+          </div>
+          <br />
+          <div class="col-auto" *ngIf="_tmpTerm.length">
+            <label for="loanTerm">Loan term</label>
+            <select
+              class="form-control"
+              formControlName="loanTerm"
+              [ngClass]="{ 'is-invalid': submitted && fields.loanTerm.errors }"
+            >
+              <option *ngFor="let item of _tmpTerm" value="{{ item.term }}">
+                {{ item.name }}
+              </option>
+            </select>
+            <div
+              *ngIf="submitted && fields.loanTerm.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="fields.loanTerm.errors">Minimum 6 months</div>
+            </div>
+          </div>
+          <br />
+          <div class="col-auto">
+            <a routerLink="/home" class="btn btn-secondary">Back</a>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-success">
+              Continue &rarr;
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-  
-  </div>   
-  <br>
-  <div class="col-auto">
-      <a routerLink="/home" class="btn btn-secondary">Back</a>&nbsp;&nbsp;
-      <button type="submit" class="btn btn-success">Continue &rarr;</button>
-  </div>
-</form>
   </div>
 </div>
