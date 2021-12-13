@@ -1,0 +1,29 @@
+<app-progress-bar [progress]="progress"></app-progress-bar>
+
+<div class="row">
+	<div class="col-12">
+		<div *ngIf="!SalaryToLow; else Disabled">
+
+			<form [formGroup]="workingForm" (ngSubmit)="onSubmit()">
+				<div class="col-auto">
+					<label for="wTime">Total working time in current job (in months)</label>
+    <input type="number" class="form-control" formControlName="wTime" [ngClass]="{ 'is-invalid': submitted && fields.wTime.errors}" />
+
+  <div *ngIf="submitted && fields.wTime.errors" class="invalid-feedback">
+      <div *ngIf="fields.wTime.errors">Minimum 3 month.</div>
+  </div>
+
+  </div>
+  <br>
+  <div class="col-auto">
+      <a routerLink="/salary" class="btn btn-secondary">Back</a>&nbsp;&nbsp;
+      <button type="submit" class="btn btn-success">Continue &rarr;</button>
+  </div>
+</form>
+
+    </div>
+    <ng-template #Disabled>
+      <p>Your salary too low and amount of loan too big. Please go back <a routerLink="/loan" class="btn btn-warning btn-sm">&larr; Back</a></p>
+    </ng-template>   
+  </div>
+</div>
