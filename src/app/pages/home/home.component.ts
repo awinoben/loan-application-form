@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  _tmpIntroHeadline: string = 'Welcome to Consumer Loan Application';
-  _tmpIntroDesc: string = 'Please fill four steps to apply for consumer loan. In the end will see all summary of loan information.';
+  _tmpIntroHeadline: string = 'Welcome to Swedbank Loan Application';
+  _tmpIntroDesc: string = 'Please fill all the fields in the form to apply for consumer loan. In the end, you will see all summary of loan information.';
   _tmpIntroFooter = 'Thank you.'
 
   constructor() { }

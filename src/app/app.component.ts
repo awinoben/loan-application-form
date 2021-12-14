@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // title = 'swedbank-loan-form';
-  title : string = 'Loan Application Form';
+  name : string = 'Loan Application Form';
 }
