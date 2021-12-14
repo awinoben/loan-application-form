@@ -1,35 +1,28 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+console.log(this);
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
+const clasApp = new AppComponent(); 
+
+describe('app component test', () => {
+  it('should succeed', () => expect(true).toEqual(true));
+  
+  it('should have a defined component', () => {
+    expect(clasApp).toBeDefined();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('should have name variable in componet', () => {
+    expect(clasApp.name).toBeDefined();
   });
 
-  it(`should have as title 'swedbank-loan-form'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('swedbank-loan-form');
+  it('name variable should be equal to \'Loan Application Form\'', () => {
+    expect(clasApp.name).toBe('Loan Application Form');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('swedbank-loan-form app is running!');
+  it('should have number version in component', () => {
+    expect(clasApp.version).toBeDefined();
   });
+  it('number variable should be equal to 1', () => {
+    expect(clasApp.version).toEqual(1);
+  });
+
 });

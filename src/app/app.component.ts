@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // title = 'swedbank-loan-form';
   name : string = 'Loan Application Form';
+  version : number = 1.0;
 }
